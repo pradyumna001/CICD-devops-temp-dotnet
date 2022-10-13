@@ -1,0 +1,16 @@
+  # docker-compose.yaml
+  version: '3.8'
+  services:
+    dotnet_app:
+      build: 
+        context: .
+        dockerfile: ./mvcdemo/Dockerfile
+      container_name: dotnet_app
+      restart: always
+      privileged: true
+      user: root
+      ports:
+        - 8083:80
+      # volumes:
+      #   - ./jenkins_home:/var/jenkins_home
+      #   - /var/run/docker.sock:/var/run/docker.sock
